@@ -36,6 +36,5 @@ export default function Forecast(props) {
         underText: {
            flexDirection: 'column',
            justifyContent: 'space-between'
-
         }
     })

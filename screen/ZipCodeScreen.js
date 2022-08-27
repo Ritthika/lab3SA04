@@ -16,10 +16,13 @@ const ZipItem = ({place, code, navigation}) =>(
     <TouchableHighlight onPress={() => 
         navigation.navigate('Weather',{zipCode: code})
     }>
-        <View style ={styles.zipItem}>
-            <Text>{place}</Text>
-            <Text>{code}</Text>
+        <View style ={styles.card}>
+            <View style ={styles.zipItem}>
+                <Text style ={styles.text}>{place}</Text>
+                <Text Text style ={styles.text}>{code}</Text>
+            </View>
         </View>
+        
     </TouchableHighlight>
 )
 
@@ -61,11 +64,11 @@ const styles = StyleSheet.create ({
         fontSize: 30,
     },
     image: {
-        width: '80%',
-        height: '80%',
+        width: '50%',
+        height: '90%',
     },
     view: {
-        height: '800%',
+        height: '200%',
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -75,6 +78,21 @@ const styles = StyleSheet.create ({
     },
     bg: {
         width: '100%',
-        height: '115%'
+        height: '100%'
     },
+    card: {
+        backgroundColor: 'rgba(0, 52, 52, 0.7)',
+        shadowColor: "#ffffff",
+        shadowOffset: {
+            width: 0,
+            height: 10,
+        },
+        shadowOpacity: 0.34,
+        shadowRadius: 6.27,
+    },
+    text:{
+        fontStyle: 'italic',
+        fontSize: 30,
+    }
+
 })

@@ -9,19 +9,26 @@ const availableZipItems = [
     { place: 'Chiangmai', code: '50000' },
     { place: 'Khonkaen', code: '40000' },
     { place: 'Chonburi', code: '20000' },
+    { place: 'Wiengsa', code: '84190' },
+    { place: 'Chawang', code: '80260' },
+    { place: 'Bankkok Samsannok ', code: '10310' },
 ]
+  
    
 
 const ZipItem = ({place, code, navigation}) =>(
     <TouchableHighlight onPress={() => 
         navigation.navigate('Weather',{zipCode: code})
     }>
-        <View style ={styles.card}>
-            <View style ={styles.zipItem}>
-                <Text style ={styles.text}>{place}</Text>
-                <Text Text style ={styles.text}>{code}</Text>
+        <View style ={styles.column}>
+            <View style ={styles.card}>
+                <View style ={styles.zipItem}>
+                    <Text style ={styles.text}>{place}</Text>
+                    <Text Text style ={styles.text}>{code}</Text>
+                </View>
             </View>
         </View>
+       
         
     </TouchableHighlight>
 )
@@ -78,7 +85,7 @@ const styles = StyleSheet.create ({
     },
     bg: {
         width: '100%',
-        height: '100%'
+        height: '120%'
     },
     card: {
         backgroundColor: 'rgba(0, 52, 52, 0.7)',
@@ -87,12 +94,15 @@ const styles = StyleSheet.create ({
             width: 0,
             height: 10,
         },
-        shadowOpacity: 0.34,
-        shadowRadius: 6.27,
+        shadowOpacity: 0.30,
+        shadowRadius: 6.00,
     },
     text:{
         fontStyle: 'italic',
         fontSize: 30,
+    },
+    column: {
+        flexDirection: 'column',
     }
 
 })
